@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth antialiased">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV • ชื่อ-นามสกุล</title>
+  <meta name="description" content="เรซูเม่ธีมเทคโนโลยี ทันสมัย สะอาดตา และน่าเชื่อถือ โดยใช้ Tailwind CSS" />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config for on-the-fly design tokens
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "Noto Sans Thai", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", "Helvetica Neue", "Arial", "\u0E19\u0E32\u0E21\u0E2A\u0E01\u0E38\u0E25", "sans-serif"],
+          },
+          boxShadow: {
+            soft: "0 1px 2px 0 rgb(0 0 0 / 0.04), 0 2px 6px -1px rgb(0 0 0 / 0.06)",
+          },
+        },
+      },
+      darkMode: ['class'],
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* พิมพ์เป็น PDF ให้สวยและพอดี A4 */
+    @page { size: A4; margin: 16mm; }
+    @media print {
+      html { background: white !important; }
+      body { margin: 0 !important; }
+      .no-print { display: none !important; }
+      .page { box-shadow: none !important; background: white !important; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-white text-slate-800 dark:from-slate-950 dark:to-slate-900 dark:text-slate-100 font-sans">
+  <!-- Action Bar -->
+  <div class="no-print sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/90 dark:bg-slate-900/90 border-b border-slate-200/80 dark:border-slate-800">
+    <div class="mx-auto max-w-4xl px-4 py-2 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="size-2 rounded-full bg-indigo-500 animate-pulse"></div>
+        <span class="text-sm font-medium text-slate-600 dark:text-slate-300">CV Theme: Tech • Tailwind</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="window.print()" class="inline-flex items-center gap-2 rounded-xl border border-slate-300 dark:border-slate-700 px-3 py-1.5 text-sm font-medium shadow-soft hover:bg-slate-50 dark:hover:bg-slate-800">
+          <!-- Printer Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4"><path d="M6 7V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/><path d="M6 17H5a3 3 0 0 1-3-3v-2a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-1"/><path d="M6 13h12v8H6z"/><path d="M8 7h8"/></svg>
+          <span>พิมพ์ / บันทึก PDF</span>
+        </button>
+        <button id="modeBtn" class="inline-flex items-center gap-2 rounded-xl border border-slate-300 dark:border-slate-700 px-3 py-1.5 text-sm font-medium shadow-soft hover:bg-slate-50 dark:hover:bg-slate-800" aria-label="สลับโหมด">
+          <!-- Moon/Sun Icon -->
+          <svg id="modeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4"><path d="M21.64 13a9 9 0 1 1-10.63-10.6 1 1 0 0 1 1.13 1.45A7 7 0 1 0 20 12.51 1 1 0 0 1 21.64 13z"/></svg>
+          <span>โหมดแสง/มืด</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page -->
+  <main class="page mx-auto max-w-4xl px-6 py-8 md:py-12">
+    <!-- Header -->
+    <header class="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 p-6 md:p-8 shadow-soft">
+      <div class="absolute inset-0 pointer-events-none select-none [mask-image:radial-gradient(60%_60%_at_20%_0%,black,transparent)]">
+        <div class="absolute -top-24 -left-24 size-80 rounded-full bg-gradient-to-br from-indigo-500/20 to-purple-500/20 blur-3xl"></div>
+      </div>
+      <div class="relative grid grid-cols-1 md:grid-cols-[auto,1fr] gap-6 items-center">
+        <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="profile" class="h-28 w-28 md:h-32 md:w-32 rounded-2xl object-cover border border-slate-200 dark:border-slate-700" />
+        <div class="space-y-2">
+          <h1 class="text-3xl md:text-4xl font-bold tracking-tight">ชื่อ-นามสกุล</h1>
+          <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300">ตำแหน่ง • สายงานเทคโนโลยี (เช่น Software Engineer, Project Manager)</p>
+          <div class="flex flex-wrap items-center gap-2 pt-2">
+            <a href="mailto:you@email.com" class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-700 px-3 py-1 text-sm hover:bg-slate-50 dark:hover:bg-slate-800">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-1.4 4.25-6.3 4.2a1 1 0 0 1-1.6 0l-6.3-4.2A1 1 0 0 1 5 6h14a1 1 0 0 1-.4 2.25Z"/></svg>
+              you@email.com
+            </a>
+            <a href="tel:+66000000000" class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-700 px-3 py-1 text-sm hover:bg-slate-50 dark:hover:bg-slate-800">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.2 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.89.32 1.76.6 2.6a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.11-.45c.84.28 1.71.48 2.6.6A2 2 0 0 1 22 16.92z"/></svg>
+              +66 00 000 0000
+            </a>
+            <a href="https://github.com/yourname" class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-700 px-3 py-1 text-sm hover:bg-slate-50 dark:hover:bg-slate-800">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4"><path fill-rule="evenodd" d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.9 0-1.3.46-2.37 1.23-3.2-.12-.3-.53-1.51.12-3.14 0 0 1.01-.32 3.3 1.22a11.44 11.44 0 0 1 6 0c2.3-1.54 3.3-1.22 3.3-1.22.65 1.63.24 2.84.12 3.14.77.83 1.23 1.9 1.23 3.2 0 4.58-2.8 5.6-5.48 5.9.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.58A12 12 0 0 0 12 .5Z" clip-rule="evenodd"/></svg>
+              github.com/yourname
+            </a>
+            <a href="https://your-portfolio.com" class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-700 px-3 py-1 text-sm hover:bg-slate-50 dark:hover:bg-slate-800">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 17.93V20h-2v-.07A8.013 8.013 0 0 1 4.07 13H4v-2h.07A8.013 8.013 0 0 1 11 4.07V4h2v.07A8.013 8.013 0 0 1 19.93 11H20v2h-.07A8.013 8.013 0 0 1 13 19.93Z"/></svg>
+              your-portfolio.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Body -->
+    <section class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Sidebar -->
+      <aside class="md:col-span-1 space-y-6">
+        <!-- Summary -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 p-5 shadow-soft">
+          <h2 class="text-base font-semibold tracking-wide text-slate-900 dark:text-white">สรุปย่อ (Profile)</h2>
+          <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">ผู้เชี่ยวชาญด้านซอฟต์แวร์ที่มุ่งเน้นคุณภาพ กระบวนการ และการส่งมอบ มองภาพรวมธุรกิจและเทคโนโลยีได้อย่างกลมกลืน</p>
+          <ul class="mt-3 flex flex-wrap gap-2">
+            <li class="rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-300 px-2.5 py-0.5 text-xs">Agile</li>
+            <li class="rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-300 px-2.5 py-0.5 text-xs">DevOps</li>
+            <li class="rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-300 px-2.5 py-0.5 text-xs">Cloud</li>
+          </ul>
+        </div>
+
+        <!-- Skills -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 p-5 shadow-soft">
+          <h2 class="text-base font-semibold">ทักษะหลัก (Core Skills)</h2>
+          <div class="mt-3 space-y-3">
+            <div>
+              <div class="flex justify-between text-sm"><span>JavaScript / TypeScript</span><span class="text-slate-500">ขั้นสูง</span></div>
+              <div class="mt-2 h-2 w-full rounded-full bg-slate-200 dark:bg-slate-800"><div class="h-2 w-[88%] rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span>Node.js / React</span><span class="text-slate-500">ขั้นสูง</span></div>
+              <div class="mt-2 h-2 w-full rounded-full bg-slate-200 dark:bg-slate-800"><div class="h-2 w-[85%] rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span>CI/CD & Cloud</span><span class="text-slate-500">เชี่ยวชาญ</span></div>
+              <div class="mt-2 h-2 w-full rounded-full bg-slate-200 dark:bg-slate-800"><div class="h-2 w-[90%] rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span>Project Management</span><span class="text-slate-500">ขั้นสูง</span></div>
+              <div class="mt-2 h-2 w-full rounded-full bg-slate-200 dark:bg-slate-800"><div class="h-2 w-[82%] rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 p-5 shadow-soft">
+          <h2 class="text-base font-semibold">เทคโนโลยีที่ถนัด (Stack)</h2>
+          <div class="mt-3 grid grid-cols-2 gap-2 text-sm">
+            <span class="rounded-lg border border-slate-200 dark:border-slate-700 px-2 py-1">React</span>
+            <span class="rounded-lg border border-slate-200 dark:border-slate-700 px-2 py-1">Next.js</span>
+            <span class="rounded-lg border border-slate-200 dark:border-slate-700 px-2 py-1">Node.js</span>
+            <span class="rounded-lg border border-slate-200 dark:border-slate-700 px-2 py-1">NestJS</span>
+            <span class="rounded-lg border border-slate-200 dark:border-slate-700 px-2 py-1">PostgreSQL</span>
+            <span class="rounded-lg border border-slate-200 dark:border-slate-700 px-2 py-1">MongoDB</span>
+            <span class="rounded-lg border border-slate-200 dark:border-slate-700 px-2 py-1">Docker</span>
+            <span class="rounded-lg border border-slate-200 dark:border-slate-700 px-2 py-1">Kubernetes</span>
+            <span class="rounded-lg border border-slate-200 dark:border-slate-700 px-2 py-1">AWS</span>
+            <span class="rounded-lg border border-slate-200 dark:border-slate-700 px-2 py-1">GCP</span>
+          </div>
+        </div>
+
+        <!-- Contact / Links -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 p-5 shadow-soft">
+          <h2 class="text-base font-semibold">ข้อมูลติดต่อ</h2>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li class="flex items-center gap-2"><span class="text-slate-500">ที่อยู่:</span> กรุงเทพมหานคร, ไทย</li>
+            <li class="flex items-center gap-2"><span class="text-slate-500">อีเมล:</span> you@email.com</li>
+            <li class="flex items-center gap-2"><span class="text-slate-500">โทร:</span> +66 00 000 0000</li>
+            <li class="flex items-center gap-2"><span class="text-slate-500">LinkedIn:</span> linkedin.com/in/yourname</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <div class="md:col-span-2 space-y-6">
+        <!-- About -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 p-5 shadow-soft">
+          <h2 class="text-base font-semibold">จุดเด่นทางอาชีพ (Highlights)</h2>
+          <ul class="mt-3 list-disc pl-5 text-sm leading-6 text-slate-700 dark:text-slate-300">
+            <li>ออกแบบสถาปัตยกรรมระบบที่รองรับผู้ใช้หลัก <span class="font-semibold">1M+</span> โดยคง SLA 99.9%</li>
+            <li>ยกระดับ Pipeline CI/CD ลดเวลาปล่อยโปรดักชันจาก 2 ชม. เหลือ <span class="font-semibold">15 นาที</span></li>
+            <li>บริหารโครงการข้ามทีม (Dev/Design/QA/Ops) งบประมาณ 10–20 ล้านบาท สำเร็จตรงเวลา</li>
+          </ul>
+        </div>
+
+        <!-- Experience -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 p-5 shadow-soft">
+          <h2 class="text-base font-semibold">ประสบการณ์ทำงาน</h2>
+          <div class="mt-4 space-y-6">
+            <!-- Item -->
+            <div class="grid grid-cols-[auto,1fr] gap-4">
+              <div class="flex flex-col items-center">
+                <div class="relative">
+                  <div class="size-3 rounded-full bg-indigo-500"></div>
+                  <div class="absolute left-1/2 top-3 -ml-px h-full w-px bg-slate-200 dark:bg-slate-800"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 class="font-semibold">Senior Software Engineer • บริษัท ABC</h3>
+                  <span class="text-xs text-slate-500">ม.ค. 2023 – ปัจจุบัน</span>
+                </div>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">ผู้นำด้านเทคนิค ออกแบบและพัฒนาบริการ Microservices, สื่อสารกับผู้มีส่วนได้ส่วนเสีย และโค้ชทีม</p>
+                <ul class="mt-2 list-disc pl-5 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                  <li>ออกแบบระบบ Login แบบ Passwordless ด้วย OAuth2/OIDC</li>
+                  <li>สร้าง Observability (OpenTelemetry, Grafana) ลด MTTR 40%</li>
+                  <li>ผลักดัน OKR ทีม บรรลุ 85%+ ต่อไตรมาส</li>
+                </ul>
+                <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5">Go</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5">NestJS</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5">Kubernetes</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5">AWS</span>
+                </div>
+              </div>
+            </div>
+            <!-- Item -->
+            <div class="grid grid-cols-[auto,1fr] gap-4">
+              <div class="flex flex-col items-center">
+                <div class="relative">
+                  <div class="size-3 rounded-full bg-indigo-500"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 class="font-semibold">Project Manager • บริษัท XYZ</h3>
+                  <span class="text-xs text-slate-500">ก.ค. 2020 – ธ.ค. 2022</span>
+                </div>
+                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">ดูแล Roadmap โปรดักต์ วางแผนสปรินต์ บริหารความเสี่ยง และสื่อสารผู้บริหาร</p>
+                <ul class="mt-2 list-disc pl-5 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                  <li>ลด Backlog spillover จาก 30% เหลือ 8%</li>
+                  <li>ปรับใช้ OKR/Lean Metrics เพื่อวัดคุณค่าที่ส่งมอบ</li>
+                  <li>นำ Jira/Confluence/Notion มาใช้ ตั้งมาตรฐานเอกสาร</li>
+                </ul>
+                <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5">Scrum</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5">Stakeholder Mgmt</span>
+                  <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5">Budgeting</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 p-5 shadow-soft">
+          <h2 class="text-base font-semibold">ผลงานเด่น (Selected Projects)</h2>
+          <div class="mt-4 grid sm:grid-cols-2 gap-4">
+            <div class="rounded-xl border border-slate-200 dark:border-slate-800 p-4">
+              <div class="flex items-center justify-between">
+                <h3 class="font-medium">Realtime Analytics Platform</h3>
+                <a class="text-xs text-indigo-600 hover:underline" href="#">Repo</a>
+              </div>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">แพลตฟอร์มสตรีมข้อมูล Kafka + Flink พร้อม Dashboard</p>
+              <ul class="mt-2 text-xs text-slate-600 dark:text-slate-300 space-y-1 list-disc pl-4">
+                <li>Latency p95 < 2s</li>
+                <li>Multi-tenant + RBAC</li>
+              </ul>
+            </div>
+            <div class="rounded-xl border border-slate-200 dark:border-slate-800 p-4">
+              <div class="flex items-center justify-between">
+                <h3 class="font-medium">Mobile CI/CD Pipeline</h3>
+                <a class="text-xs text-indigo-600 hover:underline" href="#">Case Study</a>
+              </div>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">สร้าง Pipeline อัตโนมัติ (Build, Test, Release) สำหรับ iOS/Android</p>
+              <ul class="mt-2 text-xs text-slate-600 dark:text-slate-300 space-y-1 list-disc pl-4">
+                <li>เวลาส่งมอบลด 85%</li>
+                <li>คุณภาพเพิ่ม: defect leakage ลด 40%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education & Certs -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 p-5 shadow-soft">
+          <h2 class="text-base font-semibold">การศึกษา & ใบรับรอง</h2>
+          <div class="mt-3 grid gap-4">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <p class="font-medium">วิศวกรรมคอมพิวเตอร์ • มหาวิทยาลัยตัวอย่าง</p>
+                <p class="text-sm text-slate-500">2016 – 2020</p>
+              </div>
+              <span class="rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300 px-2 py-0.5 text-xs">GPA 3.72</span>
+            </div>
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <p class="font-medium">AWS Certified Solutions Architect</p>
+                <p class="text-sm text-slate-500">2023 – 2026</p>
+              </div>
+              <span class="rounded-full bg-indigo-50 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300 px-2 py-0.5 text-xs">Active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages & Interests -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 p-5 shadow-soft">
+          <h2 class="text-base font-semibold">ภาษา & ความสนใจ</h2>
+          <div class="mt-3 grid sm:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p class="font-medium">ภาษา</p>
+              <ul class="mt-1 space-y-1 text-slate-600 dark:text-slate-300">
+                <li>ไทย (เจ้าของภาษา)</li>
+                <li>อังกฤษ (ทำงานได้คล่อง)</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-medium">ความสนใจ</p>
+              <ul class="mt-1 space-y-1 text-slate-600 dark:text-slate-300">
+                <li>สถาปัตยกรรมระบบ • วิศวกรรมข้อมูล • AI/LLM</li>
+                <li>ชุมชนเทค • บล็อก/สื่อความรู้ • สตาร์ทอัพ</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-8 text-center text-xs text-slate-500">
+      <p>อัปเดตล่าสุด: 2025 — ใช้ Tailwind CSS • พร้อมพิมพ์เป็น PDF</p>
+    </footer>
+  </main>
+
+  <script>
+    // Theme toggle with localStorage persistence
+    const root = document.documentElement;
+    const btn = document.getElementById('modeBtn');
+    const icon = document.getElementById('modeIcon');
+    const apply = (isDark) => {
+      root.classList.toggle('dark', isDark);
+      icon.innerHTML = isDark
+        ? '<path d="M21.64 13a9 9 0 1 1-10.63-10.6 1 1 0 0 1 1.13 1.45A7 7 0 1 0 20 12.51 1 1 0 0 1 21.64 13z"/>'
+        : '<path d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M5.64 18.36 4.22 19.78"/><circle cx="12" cy="12" r="4"/>';
+    };
+    const saved = localStorage.getItem('cv-theme-dark');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    apply(saved ? saved === '1' : prefersDark);
+    btn.addEventListener('click', () => {
+      const isDark = !root.classList.contains('dark');
+      apply(isDark);
+      localStorage.setItem('cv-theme-dark', isDark ? '1' : '0');
+    });
+  </script>
+</body>
+</html>
